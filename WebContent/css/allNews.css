@@ -1,0 +1,110 @@
+@charset "utf-8";
+/* CSS Document */
+*{
+	margin: auto;	
+}
+
+.clear:after{
+	content: "";
+	clear: both;
+	display: block;
+}
+
+.allNews-body{
+	width: 1100px;
+	height: 800px;
+	text-align: center;
+	/*background-color: antiquewhite;*/
+}
+
+.allNews-title{
+	width: 1100px;
+	height: 160px;
+	/*background-color: aqua;*/
+	text-align: center;
+	font-size: 27px;
+	font-family:"微软雅黑"; 
+	border-bottom: 1px solid #F0F0F0;
+}
+
+.titlePicture{
+	width:100%;
+	height: 450px;
+	background-image: url("../image/main/titleCat2.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: top;
+}
+
+.allNews-title1{
+	color:#FF6637;
+	position: relative;
+	top:60px;
+}
+
+.font-size{
+	font-size: 14px;
+	color:#737373;
+}
+
+.allNews-Contents{
+	width: 1100px;
+	height: 50px;
+	border-bottom: 1px dashed #F0F0F0; 
+}
+
+.allNews-Contents:hover{
+	background-color: #F4F6F5;
+	color: #FF6637;
+}
+
+.allNews-A{
+	float: left;
+	padding-left: 20px;
+	padding-top: 15px;
+}
+.allNews-A2{
+	color: #737373;
+	font-size: 17px;
+	text-decoration: none;
+}
+
+.allNews-A2:hover{
+	color: #FF6637;
+}
+.allNews-AA{
+	color: #737373;
+	font-size: 17px;
+	text-decoration: none;
+}
+.allNews-AA:hover{
+	color: #FF6637;
+}
+.allNews-time{
+	float: right;
+	padding-right: 20px;
+	color: #4D4D4D;
+	font-size: 14px;
+	padding-top: 16px;
+}
+
+.detailBody{
+	width:800px;
+	line-height: 30px;
+	margin-top: 50px;
+	margin-bottom: 80px;
+}
+
+.detailPicture{
+	width:100%;
+	height: 450px;
+	background-image: url("../image/main/detailDog.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: top;
+}
+
+
+
+
+

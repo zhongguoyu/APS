@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>   
+<!DOCTYPE mapper   
+PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"  
+"http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="com.aps.dao.DonateDao">
+	<select id="findDonatePeopleCount" resultType="java.lang.Integer">
+		select count(*) from donate
+	</select>
+	
+	<select id="findDonateMoneyCount" resultType="java.lang.Double">
+		select sum(donatemoney) from donate
+	</select>
+	
+	<select id="findAllDonate" resultType="donate">
+		select * from donate
+	</select>
+	
+	<insert id="addDonate" parameterType="donate">
+		insert into donate values(donate_seq.nextval,#{donateMoney},#{donateName},'4.gif',#{email},#{phone},#{message},sysdate)
+	</insert>
+</mapper>

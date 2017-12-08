@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>   
+<!DOCTYPE mapper   
+PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"  
+"http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="com.aps.dao.MessageDao">
+
+	<!-- 根据电话号码查找当天留言 -->
+	<select id="findMessageByPhone" resultType="java.lang.Integer">
+		select count(*) from
+		message where phone=#{0} and
+		to_char(messagetime,'yyyymmdd')=to_char(sysdate,'yyyymmdd')
+	</select>
+
+	<insert id="insertNewMessage" parameterType="message">
+		insert into message
+		values(message_seq.nextval,#{name},#{phone},#{content},sysdate,0)
+	</insert>
+
+	<select id="findLastMessage" resultType="message">
+		select * from (select
+		rownum as rid,message.* from message where flag=0
+		order by messageTime
+		desc) where rid between 1 and 10
+	</select>
+
+	<select id="findAllMessage" resultType="message">
+		select * from message order by messageTime
+	</select>
+</mapper>

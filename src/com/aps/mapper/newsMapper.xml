@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>   
+<!DOCTYPE mapper   
+PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"  
+"http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="com.aps.dao.NewsDao">
+	<select id="findAllNews" resultType="news">
+		select * from (select rownum as rid,news. * from news order by newstime desc) where rid between (#{0}-1)*9+1 and #{0}*9 
+	</select>
+	
+	<select id="findAllNewsCount" resultType="java.lang.Integer">
+		select count(*) from news
+	</select>
+	
+	<select id="findNewsById" resultType="news">
+		select * from news where newsid = #{0}
+	</select>
+	<select id="findLastFive" resultType="news">
+		select * from(select * from news order by newstime desc)where rownum between 1 and 6
+	</select>
+	
+	<insert id="addNews" parameterType="news">
+		insert into news values(news_seq.nextval,#{newsTitle},sysdate,#{content})
+	</insert>
+</mapper>

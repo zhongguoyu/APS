@@ -1,0 +1,294 @@
+*{
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+.clear:after{
+	content:"";
+	clear: both;
+	display: block;
+}
+
+a{
+	text-decoration: none;
+}
+
+/*滚动轮播*/	
+.banner-box {
+	position: relative;
+	text-align: center;
+	overflow: hidden;
+}
+
+.banner-box .img {
+	width:8000px;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.banner-box .img li {
+	float: left;
+}
+
+.banner-box .li {
+	width: 100%;
+	position: absolute;
+	left: 0;
+	bottom: 10px;
+}
+
+.banner-box .li li {
+	width: 10px;
+	height: 10px;
+	background: #ccc;
+	border-radius: 50%;
+	display: inline-block;
+	margin: 0 3px;
+	cursor: pointer;
+}
+
+.banner-box .but {
+	position: absolute;
+	top: 50%;
+	margin-top: -30px;
+	width: 38px;
+	height: 60px;
+	line-height: 60px;
+	text-align: center;
+	font-size: 30px;
+	background: rgba(0, 0, 0, 0.5);
+	color: #fff;
+	font-family: '宋体';
+	cursor: pointer;
+	display: none;
+}
+
+.banner-box:hover .but {
+	display: block;
+}
+
+.banner-box .but-left {
+	left: 0;
+}
+
+.banner-box .but-right {
+	right: 0;
+}
+
+.banner-box .li .index {
+	background: #f60;
+	width: 30px;
+	border-radius: 10px;
+}
+
+.banner-box .bar {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	height: 5px;
+	background-color: hsla(24, 100%, 50%, 0.5);
+}
+
+/*关于我们*/
+.AboutUs{
+	width: 100%;
+	height: 680px;
+	background-image: url(../image/main/AboutBg.jpg);
+	background-size:auto;
+}
+
+.AboutUsCtn{
+	background-color:rgba(240,235,235,0.9);
+	width: 100%;
+	height: 680px;
+}
+
+.AboutUsLeft{
+	width:50%;
+	height: 680px;
+	float: left;
+}
+
+.AboutUsLeftTitle{
+	margin-top: 170px;
+	margin-left: 120px;
+	margin-right: 100px
+}
+
+.AboutUsLeft p{
+	font-size: 14px;
+	color: #666666;
+	line-height: 30px;
+	margin-bottom: 50px;
+}
+
+.AboutUsLefta{
+	width: 140px;
+	height: 50px;
+	text-align: center;
+	font-size: 20px;
+	color: #FFFFFF; 
+	line-height: 50px; 
+	background-color: #FF6637;
+	display: inline-block;
+}
+
+.AboutUsRight{
+	width:50%;
+	height: 680px;
+	float: left;
+}
+
+.AboutUsRight img{
+	margin-top: 120px;
+	margin-left: 40px
+}
+
+/*流浪动物救治*/
+.saveAnimal{
+	width: 100%;
+	height: 620px;
+	background-image: url(../image/main/saveAni.jpg);
+	background-size:cover;
+	text-align: center;
+}
+
+.saveAnimal div{
+	color:#FFFFFF;
+}
+
+.saveFirst{
+	font-size: 32px;
+	padding-top:75px;
+	margin-bottom: 45px;
+}
+
+.saveSecond{
+	width: 65%;
+	font-size: 14px;
+	text-align: center;
+	line-height: 32px;
+	margin-top: 50px;
+}
+
+.saveThird{
+	width: 58%;
+	margin-top: 60px;
+}
+
+.st{
+	float: left;
+}
+
+.st1{
+	font-size: 70px;
+	padding-bottom: 15px;
+}
+
+.st2{
+	margin-top: 20px;
+}
+/*我们的工作*/
+.ourWork{	
+	width: 360px;
+	height: 260px;
+	background-image: url(../image/main/asd.png);
+	background-position: 0px 0px;
+	transition: background-position 0.5s;
+}
+
+.ourWork:hover{
+	cursor: pointer;
+	background-position: -20px 0px;
+}
+
+.ourWork1{	
+	width: 360px;
+	height: 260px;
+	background-image: url(../image/main/asdf.png);
+	background-position: 0px 0px;
+	transition: background-position 0.5s;
+}
+
+.ourWork1:hover{
+	cursor: pointer;
+	background-position: -20px 0px;
+}
+
+.ourWork2{	
+	width: 380px;
+	height: 260px;
+	background-image: url(../image/main/asdfg.png);
+	background-position: 0px 0px;
+	transition: background-position 0.5s;
+}
+
+.ourWork2:hover{
+	cursor: pointer;
+	background-position: -20px 0px;
+}
+/*领养代替收养*/
+#adopt{
+	background-image:url(../image/main/qvdai.jpg);
+	background-size:cover;
+	height: 500px;
+}
+
+#adopt1{
+	font-weight: bold;
+	text-align: center;
+	color: white;
+	font-size: 40px;		
+}
+
+#adopt2{
+	text-align: center;
+	color: white;
+	padding-top: 55px;
+}
+
+#adopt3{
+	display:inline-block;
+	margin:50px 600px;;
+	height: 31px;
+	width: 190px;
+	border: 1px solid white;	
+	text-align: center;
+	color: white;
+	padding-top: 10px;
+	border-radius: 50px;
+}
+
+.title2{
+	width: 1200px;
+	height: 39px;
+	margin-top: 30px;
+	margin-left:100px;	
+}
+
+.newsLeft1{
+	display:inline-block;
+	width:400px;
+	font-size:32px;
+	color: #808FB3; 
+	text-align: center;
+	margin-top: 15px;
+	margin-bottom: -10px;
+}
+
+.newsRight{
+	width: 56%;
+	float: left;
+}
+
+.newsRight1{
+	line-height: 50px;
+	font-size: 14px; 
+	color: #666666;
+}
+
+.newsRight1:HOVER span{
+	color:#FF7D37;
+}

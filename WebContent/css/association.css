@@ -1,0 +1,105 @@
+@charset "utf-8";
+/* CSS Document */
+*{
+	margin: auto;	
+}
+
+.clear:after{
+	content: "";
+	clear: both;
+	display: block;
+}
+
+.association-body{
+	width: 1100px;
+	
+	text-align: center;
+	/*background-color: antiquewhite;*/
+}
+
+
+.allNews-title{
+	width: 1100px;
+	height: 160px;
+	/*background-color: aqua;*/
+	text-align: center;
+	font-size: 27px;
+	font-family:"微软雅黑"; 
+	border-bottom: 2px solid #F0F0F0;
+}
+
+.allNews-title1{
+	color:#FF6637;
+	position: relative;
+	top:60px;
+}
+
+.font-size{
+	font-size: 14px;
+	color:#737373;
+}
+
+.associationPicture{
+	width:100%;
+	height: 450px;
+	background-image: url("../image/main/titleDog4.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+
+.as-news{
+	width: 1100px;
+	height: 180px;
+	/*background-color: antiquewhite;*/
+	border-bottom: 2px dashed #F0F0F0;
+}
+
+.as-image{
+	width: 180px;
+	height: 120px;
+	background-repeat: no-repeat;
+	background-size: cover; 
+	float: left;
+	margin-top: 30px;
+	cursor: pointer;
+}
+
+.as-newsTiltle{
+	width: 920px;
+	height: 28px;
+	line-height: 30px;
+	float: left;
+	margin-top: 30px;
+	text-align: left;
+	color: #797979;
+}
+
+.as-newsTiltle:hover{
+	color: #FF6637;
+}
+
+.as-newsTiltle2{
+	width: 800px;
+	height: 28px;
+	float: left;
+	padding-left: 15px;
+	font-size: 17px;
+	cursor: pointer;
+}
+
+.as-newsTiltle3{
+	width: 80px;
+	height: 28px;
+	float: right;
+	font-size: 12px;
+}
+
+
+
+
+
+
+
+
+

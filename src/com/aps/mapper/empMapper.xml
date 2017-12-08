@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>   
+<!DOCTYPE mapper   
+PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"  
+"http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="com.aps.dao.EmpDao">
+	<select id="findEmpByName" resultType="emp">
+		select * from emp where empName = #{0}
+	</select>
+	<update id="changFlag">
+		update apply set applyflag=#{0} where applyid=#{1}
+	</update>
+	<update id="changFlag2">
+		update volunteer set flag=#{0} where volunteerid=#{1}
+	</update>
+	<update id="changFlag3">
+		update animal set flag=1 where animalid=#{0}
+	</update>
+</mapper>

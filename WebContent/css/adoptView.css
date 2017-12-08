@@ -1,0 +1,208 @@
+@charset "utf-8";
+/* CSS Document */
+*{
+	margin: auto;	
+}
+
+.clear:after{
+	content: "";
+	clear: both;
+	display: block;
+}
+
+.adoptView-body{
+	width: 1100px;
+	text-align: center;
+	/*background-color: antiquewhite;*/
+}
+
+
+.allNews-title{
+	width: 1100px;
+	height: 160px;
+	/*background-color: aqua;*/
+	text-align: center;
+	font-size: 27px;
+	font-family:"微软雅黑"; 
+	
+}
+
+.boderBottom{
+	width:1100px;
+	height:2px;
+	background-color: #F0F0F0;
+}
+
+.allNews-title1{
+	color:#FF6637;
+	position: relative;
+	top:60px;
+}
+
+.font-size{
+	font-size: 14px;
+	color:#737373;
+}
+
+.adoptViewPicture{
+	width:100%;
+	height: 450px;
+	background-image: url("../image/main/catAndDog1.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+
+.avTitleContent{
+	width:650px;
+	font-size: 15px;
+	color:#737373;
+	text-align: left;
+	line-height: 25px;
+}
+
+.adoptView-button{
+	width: 110px;
+	height: 28px;
+	background-color:#FF6637;
+	color: white; 
+	font-size: 14px;
+	line-height: 28px;
+	border-radius: 10px 10px 10px 10px;
+	box-shadow: 5px 5px 15px black;
+	cursor: pointer;
+	margin-top:20px;
+	margin-bottom: 40px;
+}
+
+.av-recommend{
+	margin-top: 40px;
+	width: 700px;
+	
+	/*background-color: aquamarine;*/
+}
+
+.av-spanTitle{
+	font-size: 25px;
+	color: #3F3F3F;
+	margin-bottom: 40px;
+	display: inline-block;
+}
+
+.recommend-div{
+	width: 600px;
+	height: 500px;
+	/*background-color: antiquewhite;*/
+	margin-bottom: 40px;
+	border-bottom: 1px dashed #C5CBCA;
+}
+
+.recommend-image{
+	width: 100%;
+	height: 100%;
+	background-repeat: no-repeat;
+	background-size:cover; 
+	background-position: center;
+}
+
+.av-error{
+	text-align: center;
+	font-size: 25px;
+	line-height: 500px;
+}
+
+.rDogName{
+	width: 30%;
+	height: 60%;
+	font-size:20px;
+	background-color: #967E5A;
+	color: white;
+	line-height: 27px;
+	border-radius:10px 10px 10px 10px;
+}
+
+
+.extraBack{
+	background-color: #F8BA68;
+}
+
+.moreAdoptTitle{
+	font-size:25px;
+	color:#3F3F3F;
+	
+}
+
+.p1{
+	margin-top: 30px;
+	color: #595959;
+	font-size: 16px;
+	line-height: 30px;
+}
+
+.adoptViewA{
+	display:inline-block;
+	font-size: 14px;
+	margin-top: 50px;
+	margin-bottom: 30px;
+	text-decoration: none;
+	color: #1F497D;
+}
+
+.adoptViewA:hover{
+	color: #FF6637;
+}
+
+.haveOwnerAnimal{
+	width: 810px;
+	margin-left:-45px; 
+}
+
+.hoa-Image{
+	width: 230px;
+	height:300px;
+	background-color: antiquewhite;
+	margin-bottom: 20px;
+	margin-right:20px;
+	float: left;
+	background-repeat: no-repeat;
+	background-size:cover;
+	background-position: center;
+}
+
+.hr{
+	width: 810px;
+	height: 2px;
+	border-bottom: 1px dashed #C5CBCA;
+	margin-top: 20px;
+	margin-bottom: 40px;
+	margin-left:-45px;
+	float: left;
+}
+
+.hoa-Image2{
+	width: 180px;
+	height:250px;
+	background-color: antiquewhite;
+	margin-bottom: 20px;
+	margin-right:20px;
+	float: left;
+	background-repeat: no-repeat;
+	background-size:cover;
+	background-position: center;
+}
+
+.adopt-word{
+	color: #333333;
+	font-size: 14px;
+	margin-bottom: 15px;
+}
+
+
+
+
+
+
+
+
+
+

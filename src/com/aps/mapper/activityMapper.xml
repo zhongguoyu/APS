@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>   
+<!DOCTYPE mapper   
+PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"  
+"http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="com.aps.dao.ActivityDao">
+	<select id="findAllActivity" resultType="activity">
+		select * from (select rownum as rid,activity. * from activity where activitytime &lt;= sysdate order by activitytime desc) where rid between (#{0}-1)*9+1 and #{0}*9 
+	</select>
+	
+	<select id="findAllActivityCount" resultType="java.lang.Integer">
+		select count(*) from activity where activitytime &lt;= sysdate 
+	</select>
+	
+	<select id="findActivityById" resultType="activity">
+		select * from activity where activityid = #{0}
+	</select>
+	
+	<select id="findUnhappenActivity" resultType="unhappen">
+		select * from unhappen where happentime>sysdate order by happentime
+	</select>
+	
+	<insert id="addActivity" parameterType="unhappen">
+		insert into unhappen values(unhappen_seq.nextval,#{title},#{happenTime},#{content})
+	</insert>
+	
+	<insert id="addActivityNews" parameterType="activity">
+		insert into activity values(activity_seq.nextval,#{activityName},sysdate,#{content})
+	</insert>
+
+	<insert id="attendActivity" parameterType="activity">
+		insert into attendactivity values(attendactivity_seq.nextval,#{0},#{1},#{2})
+	</insert>
+
+</mapper>

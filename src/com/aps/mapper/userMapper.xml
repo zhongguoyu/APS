@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>   
+<!DOCTYPE mapper   
+PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"  
+"http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="com.aps.dao.UserDao">
+	<select id="findUserByName" resultType="user">
+		select * from user_ where userName=#{0}
+	</select>
+</mapper>

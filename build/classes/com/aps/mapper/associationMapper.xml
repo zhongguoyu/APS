@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>   
+<!DOCTYPE mapper   
+PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"  
+"http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="com.aps.dao.AssociationDao">
+	<select id="findNewAssNews" resultType="association">
+		select * from(select * from association order by a_time desc) where rownum=1
+	</select>
+	<select id="findAllAssociation" resultType="association">
+		select * from (select rownum as rid,a. * from Association a order by a_time desc) where rid between (#{0}-1)*5+1 and #{0}*5
+	</select>
+	
+	<select id="findAllAssociationCount" resultType="java.lang.Integer">
+		select count(*) from association
+	</select>
+
+	
+	<select id="findAssociationById" resultType="association">
+		select * from association where a_Id = #{0}
+	</select>
+	
+	<insert id="addAssociation"  parameterType="association">
+		insert into association values(association_seq.nextval,#{a_Title},sysdate,#{a_Image},#{a_content})
+	</insert>
+	
+</mapper>

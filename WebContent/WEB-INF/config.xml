@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration  
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"  
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<settings>
+		<!-- 打开延迟加载的开关 -->  
+        <setting name="lazyLoadingEnabled" value="true" />  
+        <!-- 将积极加载改为消息加载即按需加载 -->  
+        <setting name="aggressiveLazyLoading" value="false"/>  
+	</settings>
+	<!-- 配置映射类的别名 -->
+	<typeAliases>
+		<typeAlias type="com.aps.pojo.Activity" alias="activity"/>
+		<typeAlias type="com.aps.pojo.Animal" alias="animal"/>
+		<typeAlias type="com.aps.pojo.Apply" alias="apply"/>
+		<typeAlias type="com.aps.pojo.Association" alias="association"/>
+		<typeAlias type="com.aps.pojo.Donate" alias="donate"/>
+		<typeAlias type="com.aps.pojo.Emp" alias="emp"/>
+		<typeAlias type="com.aps.pojo.News" alias="news"/>
+		<typeAlias type="com.aps.pojo.Partner" alias="partner"/>
+		<typeAlias type="com.aps.pojo.User" alias="user"/>
+		<typeAlias type="com.aps.pojo.Variety" alias="variety"/>
+		<typeAlias type="com.aps.pojo.Volunteer" alias="volunteer"/>
+		<typeAlias type="com.aps.pojo.AttendActivity" alias="attendActivity"/>
+		<typeAlias type="com.aps.pojo.Unhappen" alias="unhappen"/>
+		<typeAlias type="com.aps.pojo.Message" alias="message"/>
+	</typeAliases>
+	<!-- 配置映射文件 -->
+	<mappers>
+		<mapper resource="com/aps/mapper/activityMapper.xml"/>
+		<mapper resource="com/aps/mapper/animalMapper.xml"/>
+		<mapper resource="com/aps/mapper/applyMapper.xml"/>
+		<mapper resource="com/aps/mapper/associationMapper.xml"/>
+		<mapper resource="com/aps/mapper/donateMapper.xml"/>
+		<mapper resource="com/aps/mapper/empMapper.xml"/>
+		<mapper resource="com/aps/mapper/newsMapper.xml"/>
+		<mapper resource="com/aps/mapper/partnerMapper.xml"/>
+		<mapper resource="com/aps/mapper/userMapper.xml"/>
+		<mapper resource="com/aps/mapper/varietyMapper.xml"/>
+		<mapper resource="com/aps/mapper/volunteerMapper.xml"/>
+		<mapper resource="com/aps/mapper/messageMapper.xml"/>
+	</mappers>
+</configuration>

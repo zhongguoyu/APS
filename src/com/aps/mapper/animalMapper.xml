@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" ?>   
+<!DOCTYPE mapper   
+PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"  
+"http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="com.aps.dao.AnimalDao">
+	<select id="findAnimals" resultType="animal">
+		<if test="type==null and variety==0">
+			select * from (select rownum as rid,animal.* from animal where flag = 0 order by adopt_time desc) where rid between (#{page}-1)*9+1 and #{page}*9 
+		</if>
+		<if test="type!=null and variety==0">
+			select * from (select rownum as rid,animal.* from animal where typeName=#{type} and flag = 0 order by adopt_time desc) where rid between (#{page}-1)*9+1 and #{page}*9 
+		</if>
+		<if test="type==null and variety!=0">
+			select * from (select rownum as rid,animal.* from animal where varietyId=#{variety} and flag = 0 order by adopt_time desc) where rid between (#{page}-1)*9+1 and #{page}*9 
+		</if>
+		<if test="type!=null and variety!=0">
+			select * from (select rownum as rid,animal.* from animal where typeName=#{type} and varietyId=#{variety} and flag = 0 order by adopt_time desc) where rid between (#{page}-1)*9+1 and #{page}*9 
+		</if>
+	</select>
+	<select id="animalCount" resultType="java.lang.Integer">
+		<if test="type==null and variety==0">
+			select count(*) from animal where flag = 0
+		</if>
+		<if test="type!=null and variety==0">
+			select count(*) from animal where typeName=#{type} and flag = 0
+		</if>
+		<if test="type==null and variety!=0">
+			select count(*) from animal where varietyId=#{variety} and flag = 0
+		</if>
+		<if test="type!=null and variety!=0">
+			select count(*) from animal where typeName=#{type} and varietyId=#{variety} and flag = 0
+		</if>
+	</select>
+	
+	<!-- 没有被领养的 -->
+	<select id="notAdopt" resultType="java.lang.Integer">
+		select count(*) from animal where flag = 0
+	</select>
+	
+	<!-- 已经被领养的 -->
+	<select id="haveAdopt" resultType="java.lang.Integer">
+		select count(*) from animal where flag = 1
+	</select>
+
+	<!-- 根据Id查询动物的具体信息 -->
+	<select id="findAniInfoById" resultType="animal">
+		select * from animal where animalId = #{0}
+	</select>
+
+	
+	<!-- 查找flag为0收留时间为当年当月并按时间降序排列的狗 -->
+	<select id="findDogByRule" resultType="animal">
+		select * from (select rownum as rid,animal.* from animal where age&lt;3 and typeName='狗' and flag=0 order by adopt_time desc) where rid&lt;3
+	</select>
+	
+	<!-- 查找flag为0收留时间为当年当月并按时间降序排列的猫 -->
+	<select id="findCatByRule" resultType="animal">
+		select * from (select rownum as rid,animal.* from animal where age&lt;3 and typeName='猫' and flag=0 order by adopt_time desc) where rid&lt;3
+	</select>
+	
+	<!-- 添加animal -->
+	<insert id="addAnimal" parameterType="animal">
+		insert into animal values(animal_seq.nextval,#{name},#{typeName},#{varietyId},#{sex},#{age},sysdate,#{introduction},0,#{picture})
+	</insert>
+
+	<!-- 根据动物Id查找他的种类 -->
+	<select id="findAnimalVarietyById" resultType="java.lang.String">
+		select varietyName from animal_variety where varietyId=(select varietyId from animal where animalId=#{0})
+	</select>
+	
+	<!-- 查找flag为0收留时间升序前6个狗 -->
+	<select id="findSixDog" resultType="animal">
+		select * from (select rownum as rid,a. * from (select * from animal where flag=0 and typeName='狗' order by adopt_time asc) a) where rid&lt;=6
+	</select>
+	
+	<!-- 查找flag为0收留时间升序前6个猫 -->
+	<select id="findSixCat" resultType="animal">
+		select * from (select rownum as rid,a. * from (select * from animal where flag=0 and typeName='猫' order by adopt_time asc) a) where rid&lt;=6
+	</select>
+	
+	<!-- 查找已经被收养的8个动物 -->
+	<select id="findHaveOwnerAnimal" resultType="animal">
+		select * from (select rownum as rid,animal.* from animal where flag=1) where rid&lt;=8
+	</select>
+
+</mapper>
